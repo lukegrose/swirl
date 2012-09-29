@@ -87,7 +87,6 @@ public class SelectedSightWordsELVActivity extends ExpandableListActivity {
         super.onContentChanged();
     }
     
-    /* This function is called on each child click */
     public boolean onChildClick( ExpandableListView parent, View v, int groupPosition,int childPosition,long id) {
         System.out.println("Inside onChildClick at groupPosition = " + groupPosition +" Child clicked at position " + childPosition);
         return true;
