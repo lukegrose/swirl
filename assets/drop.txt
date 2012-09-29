@@ -1,0 +1,3 @@
+drop table if exists sight_words_list_assoc;
+drop table if exists sight_words_list;
+drop table if exists sight_word;

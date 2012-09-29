@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/show_all_words"
+        android:title="Show All"
+    />
+    <item
+        android:id="@+id/copyright"
+        android:title="Copyright"
+    />
+    <item
+        android:id="@+id/help"
+        android:title="Help"
+    />
+    <item
+        android:id="@+id/about"
+        android:title="About"
+    />
+</menu>

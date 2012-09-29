@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.reader.words.sight"
+    android:versionCode="1"
+    android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="11" android:targetSdkVersion="11" />
+
+    <application
+        android:icon="@drawable/launch_1"
+        android:label="@string/app_name">
+        <activity
+            android:name="com.reader.words.sight.BookshelfActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ReaderActivity"
+            android:label="Reader" 
+            android:screenOrientation="landscape"/>
+        <activity
+            android:name=".SightWordListsActivity"
+            android:label="Sight Word Lists" />
+        <activity
+            android:name=".SelectedSightWordsActivity"
+            android:label="Selected Sight Words" /> 
+        <activity
+            android:name=".AllSightWordsActivity"
+            android:label="All Sight Words" />
+        <activity 
+            android:theme="@android:style/Theme.Dialog"
+            android:name=".NewWordActivity"
+            android:label="Create a New Word" />            
+        <activity 
+            android:theme="@android:style/Theme.Dialog"
+            android:name=".AboutActivity"
+            android:label="About" />
+        <activity
+            android:theme="@android:style/Theme.Dialog"
+            android:name=".CopyrightActivity"
+            android:label="Copyright" />    
+        <activity 
+            android:theme="@android:style/Theme.Dialog"
+            android:name=".HelpActivity" 
+            android:label="Help" />  
+        <activity 
+            android:name=".SelectedSightWordsELVActivity" 
+            android:label="Selected Sight Words" />    
+    </application>
+</manifest>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/new_word_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="true" />
+    <EditText
+        android:id="@+id/new_word_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:prompt="@string/new_word_name_prompt"
+        android:layout_below="@+id/new_word_text_view" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/new_word_edit_text">
+        <Button
+            android:id="@+id/locn_maint_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apply"
+            android:onClick="save"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/locn_maint_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:onClick="cancel"
+            android:layout_weight="1" />
+    </LinearLayout>
+</RelativeLayout>

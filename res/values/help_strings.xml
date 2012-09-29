@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="help">
+        To start reading a book with sight words highlighted touch the book cover.
+        \n\n
+        The Dolch sight word list is available in the Public Domain. 
+        The full set of Dolch Sight Words is \'highlighted\' in this Reader.
+        The Dolch Sight Word list divides it\'s words into Pre-primer, Primer, 
+        Grades 1, 2 and 3 and Nouns. They are all highlighted in the same way
+        for this prototype version of the Sight Words Reader.
+    </string>
+</resources>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/buttons_linear_layout"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <Button
+            android:id="@+id/bottom_save_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleSaveButton"
+            android:text="Save"
+            android:layout_weight="1" />
+        <Button
+            android:id="@+id/bottom_cancel_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="handleCancelButton"
+            android:text="Cancel" 
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/expandable_list_view_linear_layout"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttons_linear_layout">
+        <ExpandableListView
+            android:id="@+id/android:list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:id="@+id/android:empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="No items" />
+    </LinearLayout>
+</RelativeLayout>

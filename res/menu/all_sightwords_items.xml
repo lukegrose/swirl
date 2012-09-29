@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/show_selected_sightwords"
+        android:title="Show Selected"
+    />
+    <item
+        android:id="@+id/create_new_word"
+        android:title="New Word"
+    />
+    <item
+        android:id="@+id/copyright"
+        android:title="Copyright"
+    />
+    <item
+        android:id="@+id/help"
+        android:title="Help"
+    />
+    <item
+        android:id="@+id/about"
+        android:title="About"
+    />
+</menu>

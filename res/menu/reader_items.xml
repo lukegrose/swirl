@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/bookshelf"
+        android:icon="@drawable/library_icon"
+        android:title="Bookshelf"
+        android:showAsAction="ifRoom"
+    />
+    <item
+        android:id="@+id/copyright"
+        android:title="Copyright"
+    />
+    <item
+        android:id="@+id/help"
+        android:title="Help"
+    />
+    <item
+        android:id="@+id/about"
+        android:title="About"
+    />
+</menu>

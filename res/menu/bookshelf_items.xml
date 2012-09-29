@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:id="@+id/bookshelf_sightword_lists"
+        android:title="@string/overflow_sightword_lists"
+    />
+     <!-- <item
+        android:id="@+id/highlight"
+        android:title="Highlight"
+    /> -->
+    <item
+        android:id="@+id/copyright"
+        android:title="Copyright"
+    />
+   <item
+        android:id="@+id/help"
+        android:title="Help"
+    />
+    <item
+        android:id="@+id/about"
+        android:title="About"
+    />
+</menu>

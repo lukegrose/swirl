@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="about">
+        This is a prototype, rough cut, early beta or version 0.1 of an idea.
+        \n\n
+        All feedback welcome: \n
+        sight.words.reader@gmail.com
+        \n\n
+        What do you want to see more of?
+        \n\n
+        Roadmap:\n
+        - change words in the list\n
+        - create your own lists\n
+        - share your lists with other parents\n
+        - more content\n
+        - better images\n
+        - animations\n
+        - create your own eBooks\n
+        - statistics\n
+    </string>
+</resources>
