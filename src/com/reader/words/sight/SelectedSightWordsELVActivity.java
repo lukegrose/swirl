@@ -107,9 +107,7 @@ public class SelectedSightWordsELVActivity extends ExpandableListActivity {
     }
     
     public void handleSaveButton(View view) {
-    	
     	db.updateSelectedWords(sightWordList);
-    	
     	onBackPressed();
     }
 }
