@@ -49,7 +49,6 @@ public final class R {
         public static final int LinearLayout01=0x7f080007;
         public static final int about=0x7f080027;
         public static final int about_text_view=0x7f080001;
-        public static final int add_new_list=0x7f08002e;
         public static final int all_list_name_edit_view=0x7f080005;
         public static final int all_list_name_text_view=0x7f080004;
         public static final int all_sightword_image_view=0x7f080009;

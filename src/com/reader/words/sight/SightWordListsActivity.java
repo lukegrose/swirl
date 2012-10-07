@@ -171,25 +171,23 @@ public class SightWordListsActivity extends ListActivity {
 
 		switch (item.getItemId()) {
 
-			case R.id.add_new_list:
-				startActivity(new Intent(this, AllSightWordsActivity.class));
-				break;
+//			case R.id.add_new_list:
+//				startActivity(new Intent(this, AllSightWordsActivity.class));
+//				break;
 	
+		
 			case R.id.copyright:
-				Toast.makeText(getBaseContext(), "You selected 'Copyright'",
-						Toast.LENGTH_SHORT).show();
-				break;
+	        	startActivity(new Intent(this, CopyrightActivity.class));
+	            break;
 	
-			case R.id.help:
-				Toast.makeText(getBaseContext(), "You selected 'Help'",
-						Toast.LENGTH_SHORT).show();
-				break;
-	
-			case R.id.about:
-				Toast.makeText(getBaseContext(), "You selected 'About'",
-						Toast.LENGTH_SHORT).show();
-				break;
-			}
+	        case R.id.help:
+	        	startActivity(new Intent(this, HelpActivity.class));
+	            break;    
+	            
+	        case R.id.about:
+	        	startActivity(new Intent(this, AboutActivity.class));
+	            break;
+		}
 
 		return true;
 	}
