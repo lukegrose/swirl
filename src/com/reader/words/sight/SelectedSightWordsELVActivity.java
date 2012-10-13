@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.Map;
 
 import android.app.ExpandableListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ExpandableListView;
 
 import com.reader.words.sight.model.SightWord;
 import com.reader.words.sight.model.SightWordList;
+import com.reader.words.sight.model.SightWordsDbHelper;
 import com.reader.words.sight.model.SightWordsReaderDb;
 
 public class SelectedSightWordsELVActivity extends ExpandableListActivity { 
@@ -26,16 +28,18 @@ public class SelectedSightWordsELVActivity extends ExpandableListActivity {
 		});
 	
 	public void onCreate(Bundle savedInstanceState) {
-        try{
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.selected_elv_main);
- 
-            db = SightWordsReaderDb.getInstance(this);
-//            sightWordList = db.getSightWordList("Dolch - All");
-//            sightWordList = db.getSightWordList("Dolch - PrePrimer");
-            sightWordList = db.getSightWordList("Dolch - Nouns");
+		
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.selected_elv_main);
+		db = SightWordsReaderDb.getInstance(this);
+		
+        try {
             
-	        ExpandableAppAdapter expListAdapter =
+        	Intent intent = getIntent();
+            Bundle b = intent.getExtras();
+            sightWordList = b.getParcelable("sightWordList");
+
+        	ExpandableAppAdapter expListAdapter =
 	            new ExpandableAppAdapter(
 	                    this,
 	                    createGroupList(),              
@@ -44,7 +48,7 @@ public class SelectedSightWordsELVActivity extends ExpandableListActivity {
         
             setListAdapter( expListAdapter );
  
-        }catch(Exception e){
+        } catch(Exception e){
             System.out.println("Errrr +++ " + e.getMessage());
             throw new RuntimeException("Hello, McFly...look in the logs!");
         }

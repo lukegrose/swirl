@@ -1,3 +1,3 @@
 CREATE TABLE sight_word (word VARCHAR(50) NOT NULL, PRIMARY KEY(word));
-CREATE TABLE sight_word_list (list_name VARCHAR(200) NOT NULL, PRIMARY KEY(list_name)); 
+CREATE TABLE sight_word_list (list_name VARCHAR(200) NOT NULL, current INTEGER NOT NULL, PRIMARY KEY(list_name)); 
 CREATE TABLE sight_word_list_assoc (list_name VARCHAR(200), word VARCHAR(50) NOT NULL, highlighted INTEGER NOT NULL, PRIMARY KEY(word, list_name), FOREIGN KEY(list_name) REFERENCES sight_word_list(list_name), FOREIGN KEY(word) REFERENCES sight_word(word));

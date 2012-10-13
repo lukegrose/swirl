@@ -5,11 +5,11 @@
         android:icon="@drawable/ic_menu_agenda"
         android:title="Select Active"
     />
-    <item
+    <!-- <item
         android:id="@+id/delete_list"
         android:icon="@drawable/ic_menu_delete"
         android:title="Delete List"
-    />
+    /> -->
     <item
         android:id="@+id/edit_list"
         android:icon="@drawable/ic_menu_edit"

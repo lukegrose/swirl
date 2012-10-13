@@ -7,6 +7,12 @@
         android:showAsAction="ifRoom"
     /> -->    
     <item
+        android:id="@+id/bookshelf"
+        android:icon="@drawable/library_icon"
+        android:title="Bookshelf"
+        android:showAsAction="ifRoom"
+    />
+    <item
         android:id="@+id/copyright"
         android:title="Copyright"
     />

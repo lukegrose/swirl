@@ -1,38 +1,56 @@
 package com.reader.words.sight.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class SightWordList {
+import android.os.Parcel;
+import android.os.Parcelable;
 
-	private int id;
+public class SightWordList implements Parcelable {
+
 	private String name;
 	private boolean current;
 	private List<SightWord> words;
 	
-	public SightWordList(int id, String name, boolean current, List<SightWord> words) {
+	public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+		 
+        @Override
+        public SightWordList createFromParcel(Parcel source) {
+            // TODO Auto-generated method stub
+            return new SightWordList(source);
+        }
+ 
+        @Override
+        public SightWord[] newArray(int size) {
+            return new SightWord[size];
+        }
+    };
+
+
+    public SightWordList(Parcel parcel) {
+    	
+    	this(parcel.readString(), parcel.readByte() == 1);
+    	List<SightWord> words = new ArrayList<SightWord>();
+    	parcel.readTypedList(words, SightWord.CREATOR);
+    	setSightWords(words);
+    	
+    }
+    
+	public SightWordList(String name, boolean current, List<SightWord> words) {
 		
-		this(id, name, current);
+		this(name, current);
 		setSightWords(words);
 		
 	}
 	
 //	TODO: not sure how I am going to use this, I may not want a 'deep' retrieve of the whole
 //	...object graph
-	public SightWordList(int id, String name, boolean current) {
+	public SightWordList(String name, boolean current) {
 		
 		super();
-		setId(id);
 		setName(name);
 		setCurrent(current);
 		
-	}
-	
-	private int getId() {
-		return id;
-	}
-	
-	private void setId(int id) {
-		this.id = id;
 	}
 	
 	public String getName() {
@@ -61,7 +79,7 @@ public class SightWordList {
 
 	@Override
 	public String toString() {
-		return "SightWordList [id=" + id + ", name=" + name + ", current="
+		return "SightWordList [name=" + name + ", current="
 				+ current + ", words=" + words + "]";
 	}
 
@@ -70,7 +88,6 @@ public class SightWordList {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + (current ? 1231 : 1237);
-		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((words == null) ? 0 : words.hashCode());
 		return result;
@@ -87,8 +104,6 @@ public class SightWordList {
 		SightWordList other = (SightWordList) obj;
 		if (current != other.current)
 			return false;
-		if (id != other.id)
-			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
@@ -100,5 +115,20 @@ public class SightWordList {
 		} else if (!words.equals(other.words))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		
+		dest.writeString(name);
+		dest.writeByte((byte) (current ? 1 : 0));
+		dest.writeTypedList(words);
+		
 	}
 }

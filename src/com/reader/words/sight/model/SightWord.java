@@ -1,15 +1,45 @@
 package com.reader.words.sight.model;
 
-public class SightWord {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class SightWord implements Parcelable{
 	
 	private int id;
 	private String value;
 	private boolean highlight;
 	
+	public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
+		 
+        @Override
+        public SightWord createFromParcel(Parcel source) {
+            return new SightWord(source);
+        }
+ 
+        @Override
+        public SightWord[] newArray(int size) {
+            return new SightWord[size];
+        }
+    };
+    
+    public SightWord(Parcel parcel) {
+    	
+    	this(parcel.readString(), parcel.readByte() == 1);
+    	
+    }
+	
 	public SightWord(int id, String value, boolean highlight) {
 		
 		super();
 		setId(id);
+		setValue(value);
+		setHighlight(highlight); //stored in junction table 
+		
+	}
+	
+	public SightWord(String value, boolean highlight) {
+		
+		super();
 		setValue(value);
 		setHighlight(highlight); //stored in junction table 
 		
@@ -74,6 +104,20 @@ public class SightWord {
 		} else if (!value.equals(other.value))
 			return false;
 		return true;
+	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		
+		dest.writeString(value);
+		dest.writeByte((byte) (highlight ? 1 : 0));
+		
 	}
 	
 }

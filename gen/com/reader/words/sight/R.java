@@ -10,6 +10,7 @@ package com.reader.words.sight;
 public final class R {
     public static final class array {
         public static final int humpty_dumpty_paragraphs=0x7f060000;
+        public static final int pied_piper_paragraphs=0x7f060001;
     }
     public static final class attr {
     }
@@ -54,7 +55,7 @@ public final class R {
         public static final int all_sightword_image_view=0x7f080009;
         public static final int all_sightword_text_view=0x7f080008;
         public static final int all_sightwords_text_view=0x7f080006;
-        public static final int bookshelf=0x7f08002c;
+        public static final int bookshelf=0x7f08002b;
         public static final int bookshelf_humptydumpty_cover=0x7f08000a;
         public static final int bookshelf_sightword_lists=0x7f080028;
         public static final int bottom_cancel_button=0x7f08001a;
@@ -62,9 +63,8 @@ public final class R {
         public static final int buttons_linear_layout=0x7f080018;
         public static final int copyright=0x7f080025;
         public static final int create_new_word=0x7f080024;
-        public static final int delete_list=0x7f08002a;
         public static final int done_button=0x7f080002;
-        public static final int edit_list=0x7f08002b;
+        public static final int edit_list=0x7f08002a;
         public static final int expandable_list_view_linear_layout=0x7f08001b;
         public static final int frame_view=0x7f080011;
         public static final int grp_child=0x7f080015;
@@ -89,7 +89,7 @@ public final class R {
         public static final int selected_list_name_text_view=0x7f08001d;
         public static final int selected_sightword_check_box=0x7f080020;
         public static final int selected_sightword_text_view=0x7f08001f;
-        public static final int show_all_words=0x7f08002d;
+        public static final int show_all_words=0x7f08002c;
         public static final int show_selected_sightwords=0x7f080023;
         public static final int sightword_list_text_view=0x7f080022;
     }

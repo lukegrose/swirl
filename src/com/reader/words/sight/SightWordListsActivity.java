@@ -49,46 +49,55 @@ public class SightWordListsActivity extends ListActivity {
 
 			switch (item.getItemId()) {
 
-			case R.id.edit_list:
-				startActivity(new Intent(SightWordListsActivity.this,
-						SelectedSightWordsELVActivity.class));
-				mode.finish();
-				return true;
-
-			case R.id.make_active_list:
-
-				if (SightWordListsActivity.this.mSelected != null) {
+				case R.id.edit_list:
 					
-					Toast.makeText(
-							getBaseContext(),
-							"\"" + mSelected.getName()
-									+ "\" is now the active list",
-							Toast.LENGTH_SHORT).show();
-
-					mDb.setCurrentlyActiveList(SightWordListsActivity.this.mSelected);
-					mSelected = null;
-					mAllSightWordLists = mDb.allListsDeep();
-					mAdapter.notifyDataSetChanged();
-
-				}
-				mode.finish();
-				return true;
-
-			case R.id.delete_list:
-				//this method is deprecated, it needs to be replaced with fragments
-				showDialog(0);
-				mode.finish();
-				return true;
-
-			default:
-				return false;
+					Intent intent = new Intent(SightWordListsActivity.this,
+							SelectedSightWordsELVActivity.class);
+					
+	                Bundle b = new Bundle();
+	                b.putParcelable("sightWordList", mSelected);
+	                intent.putExtras(b);
+	                startActivity(intent);
+					mode.finish();
+					return true;
+	
+				case R.id.make_active_list:
+	
+					if (SightWordListsActivity.this.mSelected != null) {
+						
+						Toast.makeText(
+								getBaseContext(),
+								"\"" + mSelected.getName()
+										+ "\" is now the active list",
+								Toast.LENGTH_SHORT).show();
+	
+						for (SightWordList swirl : mAllSightWordLists) {
+							swirl.setCurrent(false);
+						}
+						
+						SightWordListsActivity.this.mSelected.setCurrent(true);
+						mDb.updateList(SightWordListsActivity.this.mSelected);
+						mSelected = null;
+						mAdapter.notifyDataSetChanged();
+	
+					}
+					mode.finish();
+					return true;
+	
+	//			case R.id.delete_list:
+	//				//this method is deprecated, it needs to be replaced with fragments
+	//				showDialog(0);
+	//				mode.finish();
+	//				return true;
+	
+				default:
+					return false;
 			}
 		}
 
 		@Override
 		public void onDestroyActionMode(ActionMode mode) {
-			mSelected = null;
-			mAllSightWordLists = mDb.allListsDeep();
+//			mSelected = null;
 			mAdapter.notifyDataSetChanged();
 			mActionMode = null;
 		}
@@ -114,7 +123,7 @@ public class SightWordListsActivity extends ListActivity {
 										Toast.LENGTH_SHORT).show();
 								mDb.deleteList(mSelected);
 								mSelected = null;
-								mAllSightWordLists = mDb.allListsDeep();
+								mAllSightWordLists = mDb.getSightWordLists();
 								mAdapter.notifyDataSetChanged();
 								dialog.cancel();
 							}
@@ -148,13 +157,14 @@ public class SightWordListsActivity extends ListActivity {
 			mDb = SightWordsReaderDb.getInstance(this);
 		}
 
-		mAllSightWordLists = mDb.allListsDeep();
+		mAllSightWordLists = mDb.getSightWordLists();
 		mAdapter = new SightWordListListAdapter(this, mAllSightWordLists);
 		setListAdapter(mAdapter);
 		ListView listView = getListView();
 		listView.setClickable(true);
 		listView.setItemsCanFocus(false);
 		listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 	}
 
 	@Override
@@ -175,7 +185,10 @@ public class SightWordListsActivity extends ListActivity {
 //				startActivity(new Intent(this, AllSightWordsActivity.class));
 //				break;
 	
-		
+			case android.R.id.home: 
+				onBackPressed();
+				break;
+			
 			case R.id.copyright:
 	        	startActivity(new Intent(this, CopyrightActivity.class));
 	            break;
@@ -187,6 +200,10 @@ public class SightWordListsActivity extends ListActivity {
 	        case R.id.about:
 	        	startActivity(new Intent(this, AboutActivity.class));
 	            break;
+	            
+	        case R.id.bookshelf:
+            	startActivity(new Intent(this, BookshelfActivity.class));
+                break;  
 		}
 
 		return true;

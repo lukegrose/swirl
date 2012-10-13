@@ -20,14 +20,14 @@ public class GenUtil {
 	
 	public static void fillSightWordListDeep(List<SightWordList> sightWordLists) {
 		
-		sightWordLists.add(new SightWordList(0, "Dolch - PrePrimer", false, fillPrePrimerWords(0)));
-		sightWordLists.add(new SightWordList(1, "Dolch - Primer", false, fillPrimerWords(0)));
-		sightWordLists.add(new SightWordList(1, "Dolch - Grade 1", false, fillGradeOneWords(0)));
-		sightWordLists.add(new SightWordList(1, "Dolch - Grade 2", false, fillGradeTwoWords(0)));
-		sightWordLists.add(new SightWordList(1, "Dolch - Grade 3", false, fillGradeThreeWords(0)));
-		sightWordLists.add(new SightWordList(1, "Dolch - Nouns", false, fillNounWords(0)));
-		sightWordLists.add(new SightWordList(1, "Dolch - Non Nouns", false, fillNonNounWords()));
-		sightWordLists.add(new SightWordList(1, "Dolch - All", true, fillAllWords()));
+		sightWordLists.add(new SightWordList("Dolch - PrePrimer", false, fillPrePrimerWords(0)));
+		sightWordLists.add(new SightWordList("Dolch - Primer", false, fillPrimerWords(0)));
+		sightWordLists.add(new SightWordList("Dolch - Grade 1", false, fillGradeOneWords(0)));
+		sightWordLists.add(new SightWordList("Dolch - Grade 2", false, fillGradeTwoWords(0)));
+		sightWordLists.add(new SightWordList("Dolch - Grade 3", false, fillGradeThreeWords(0)));
+		sightWordLists.add(new SightWordList("Dolch - Nouns", false, fillNounWords(0)));
+		sightWordLists.add(new SightWordList("Dolch - Non Nouns", false, fillNonNounWords()));
+		sightWordLists.add(new SightWordList("Dolch - All", true, fillAllWords()));
 		pt("bp");
 	}
 	

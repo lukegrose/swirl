@@ -49,7 +49,7 @@ public class ReaderActivity extends Activity {
 
 		Resources res = getResources();
 		paragraphs = res.getStringArray(R.array.humpty_dumpty_paragraphs);
-		
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		setCurrentParagraph(true);
 	}
 	
@@ -61,8 +61,6 @@ public class ReaderActivity extends Activity {
 		populateSightWords();
 	    refreshView(true);
 	}
-
-
 
 	private void populateSightWords() {
 		
@@ -88,6 +86,11 @@ public class ReaderActivity extends Activity {
  
         switch(item.getItemId()){
             
+        
+	        case android.R.id.home: 
+				onBackPressed();
+				break;
+			
             case R.id.copyright:
             	startActivity(new Intent(this, CopyrightActivity.class));
                 break;
